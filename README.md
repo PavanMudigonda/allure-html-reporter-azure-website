@@ -68,6 +68,5 @@ Note:- Always the index.html points to Test Results History Page.
 ### Azure Storage Blob Static Website Sample:- Full Report, Errors, Screenshots, Trace, Video is fully visible !
 
 <img width="1228" alt="image" src="https://user-images.githubusercontent.com/29324338/174486693-39d875b5-3d82-47f6-85ca-69beae6666f5.png">
-<img width="1193" alt="image" src="https://user-images.githubusercontent.com/29324338/174486699-bf783b17-9153-4234-8076-9d2de2e3f4e8.png">
-
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29324338/174491177-d123103d-aedd-4ac0-8d58-cbdc570018a1.png">
 
