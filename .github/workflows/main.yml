@@ -1,0 +1,34 @@
+name: allure
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Git Repo
+        uses: actions/checkout@v3
+        
+      - name: Create Test Results History
+        uses: PavanMudigonda/allure-html-reporter-azure-blob-website@v0.1
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          allure_report: allure-report
+          keep_reports: 15
+          account_name: ${{ secrets.ACCOUNT_NAME }}
+          container: ${{ secrets.CONTAINER }}
+          SAS: ${{ secrets.SAS }}
+
+      - name: Post the link to the report
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with: 
+            authToken: ${{secrets.GITHUB_TOKEN}}
+            context: 'Test Results Link'
+            state: 'success'
+            sha: ${{ github.sha }}
+            target_url: https://mudigonda.z13.web.core.windows.net/${{ github.run_number }}
