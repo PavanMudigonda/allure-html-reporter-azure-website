@@ -1,5 +1,5 @@
-name: 'html-reporter-azureblob-website'
-description: 'HTML Test Results with history to publish to Azure Blob'
+name: 'allure-html-reporter-azureblob-website'
+description: 'Allure HTML Test Results with history to publish to Azure Blob'
 author: 'Pavan Mudigonda'
 branding:
   icon: 'layout'
@@ -54,3 +54,6 @@ runs:
     - ${{ inputs.keep_reports }} 
     - ${{ inputs.report_url }}  
     - ${{ inputs.account_name }}
+    - ${{ inputs.allure_report }}
+    - ${{ inputs.allure_history }}
+    - ${{ inputs.allure_results }}
