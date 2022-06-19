@@ -24,20 +24,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Test Results History
-        uses: PavanMudigonda/html-reporter-azure-blob-website@v0.1
+        uses: PavanMudigonda/allure-html-reporter-azure-blob-website@v0.1
         with:
-          test_results: test-results
-          results_history: results-history
-          keep_reports: 20
+          allure_results: allure-results
+          allure_history: allure-history
+          allure_report: allure-report
+          keep_reports: 15
           account_name: ${{ secrets.ACCOUNT_NAME }}
           container: ${{ secrets.CONTAINER }}
           SAS: ${{ secrets.SAS }}
 ```
 
-
 ### Configuration
 
+### Inputs
 
+This Action defines the following formal inputs.
+
+| Name | Req | Description
+|-|-|-|
+| **`account_name`**  | true | Account Name is mandatory.
+| **`container`** | true | Container name is mandatory.
+|**`sas`** | true | SAS Token is Mandatory for Azure Storage.
+|**`keep_reports`** | false | Defaults to 0. If you want this action to delete reports which are more than certian limit, then mention that limit.
+|**`report_url`** | true | Specify your website URL. You could use Github Secrets.
+|**`allure_report`** | false | Defaults to allure-report.
+|**`allure_history`** | false | Defaults to allure-history.
+|**`allure_results`** | false | Defaults to allure-results. If your results are outputed to another folder, please specify.
+
+    
+### Outputs
+
+This Action defines the following formal outputs.
+
+None
 
 ### Azure Container Blob structure sample:- Organized by Github Run Number
 
