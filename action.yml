@@ -15,11 +15,15 @@ inputs:
   account_name:
     description: 'account name'
     required: false
-  test_results:
-    description: 'test result data dir'
+  allure_report:
+    description: 'allure report data dir'
+    required: true
+    default: 'allure-report'    
+  allure_results:
+    description: 'allure result data dir'
     required: true
     default: 'test-results'
-  results_history:
+  allure_history:
     description: 'Folder for results history'
     required: true
     default: 'results-history'

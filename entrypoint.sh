@@ -32,7 +32,7 @@ cat > index-template.html <<EOF
 
 EOF
 #----------------------------------------------------------------------------------------------------------------------------------------
-mkdir -p ./${INPUT_RESULTS_HISTORY}
+mkdir -p ./${INPUT_ALLURE_HISTORY}
 
 if [[ ${INPUT_REPORT_URL} != '' ]]; then
     AZ_WEBSITE_URL="${INPUT_REPORT_URL}"
@@ -90,17 +90,17 @@ sh -c "azcopy list 'https://${INPUT_ACCOUNT_NAME}.blob.core.windows.net/${INPUT_
 #----------------------------------------------------------------------------------------------------------------------------------------
 # Construct Index.html file
 
-cat index-template.html > ./${INPUT_RESULTS_HISTORY}/index.html
+cat index-template.html > ./${INPUT_ALLURE_HISTORY}/index.html
 
-echo "├── <a href="./${INPUT_GITHUB_RUN_NUM}/index.html">Latest Test Results - RUN ID: ${INPUT_GITHUB_RUN_NUM}</a><br>" >> ./${INPUT_RESULTS_HISTORY}/index.html;
+echo "├── <a href="./${INPUT_GITHUB_RUN_NUM}/index.html">Latest Test Results - RUN ID: ${INPUT_GITHUB_RUN_NUM}</a><br>" >> ./${INPUT_ALLURE_HISTORY}/index.html;
 
-cat clean_folder_file.txt | grep -v 'index.html' | sort -nr | while read line; do echo "├── <a href="./"${line}"/">RUN ID: "${line}"</a><br>" >> ./${INPUT_RESULTS_HISTORY}/index.html; done
+cat clean_folder_file.txt | grep -v 'index.html' | sort -nr | while read line; do echo "├── <a href="./"${line}"/">RUN ID: "${line}"</a><br>" >> ./${INPUT_ALLURE_HISTORY}/index.html; done
 
-echo "</html>" >> ./${INPUT_RESULTS_HISTORY}/index.html;
-cat ./${INPUT_RESULTS_HISTORY}/index.html
+echo "</html>" >> ./${INPUT_ALLURE_HISTORY}/index.html;
+cat ./${INPUT_ALLURE_HISTORY}/index.html
 
-echo "copy test-results to ${INPUT_RESULTS_HISTORY}/${INPUT_GITHUB_RUN_NUM}"
-cp -R ./${INPUT_TEST_RESULTS}/. ./${INPUT_RESULTS_HISTORY}/${INPUT_GITHUB_RUN_NUM}
+echo "copy test-results to ${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}"
+cp -R ./${INPUT_ALLURE_RESULTS}/. ./${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 # Generate Allure Report
