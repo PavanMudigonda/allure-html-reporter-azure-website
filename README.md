@@ -1,6 +1,6 @@
-Example workflow file [html-reporter-azure-blob-website](https://github.com/PavanMudigonda/html-reporter-azure-blob-website/blob/main/.github/workflows/main.yml))
+Example workflow file [allure-html-reporter-azure-blob-website](https://github.com/PavanMudigonda/allure-html-reporter-azure-blob-website/blob/main/.github/workflows/main.yml))
 
-# HTML Test Results on AWS S3 Bucket with history action
+# Allure HTML Test Results on AWS S3 Bucket with history action
 
 ## Usage
 
