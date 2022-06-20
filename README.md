@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Test Results History
-        uses: PavanMudigonda/allure-html-reporter-azure-website@v0.1
+        uses: PavanMudigonda/allure-html-reporter-azure-website@v1.0
         with:
           allure_results: allure-results
           allure_history: allure-history
