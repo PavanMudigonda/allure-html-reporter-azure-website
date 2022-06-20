@@ -1,4 +1,4 @@
-name: 'allure-html-reporter-azureblob-website'
+name: 'allure-html-reporter-azure-website'
 description: 'Allure HTML Test Results with history to publish to Azure Blob'
 author: 'Pavan Mudigonda'
 branding:
